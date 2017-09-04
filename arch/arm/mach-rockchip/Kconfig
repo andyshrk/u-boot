@@ -163,6 +163,12 @@ config ROCKCHIP_BROM_HELPER
 config SPL_MMC_SUPPORT
 	default y if !SPL_ROCKCHIP_BACK_TO_BROM
 
+config ROCKCHIP_RESOURCE_IMAGE
+	bool "Enable support for rockchip resource image"
+	help
+	  This enables support to get dtb or logo files from
+	  rockchip resource image format partition.
+
 source "arch/arm/mach-rockchip/rk3036/Kconfig"
 source "arch/arm/mach-rockchip/rk3188/Kconfig"
 source "arch/arm/mach-rockchip/rk322x/Kconfig"

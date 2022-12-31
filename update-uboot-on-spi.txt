@@ -1,0 +1,7 @@
+write uboot.img to spi nor;
+upgrade_tool version: v2.17
+
+upgrade_tool db out/loader.bin
+upgrade_tool ssd       (select spi nor)
+upgrade_tool wl 0x1000 out/uboot.img
+upgrade_tool rd

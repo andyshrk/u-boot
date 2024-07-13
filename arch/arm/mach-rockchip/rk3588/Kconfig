@@ -29,6 +29,12 @@ config TARGET_CM3588_NAS_RK3588
 	  - 3.5mm Headphone out, 2.0mm PH-2A Mic in
 	  - 5V Fan connector, PWM beeper, IR receiver, RTC battery connector
 
+config TARGET_GENBOOK_RK3588
+	bool "Cool Pi GenBook"
+	select BOARD_LATE_INIT
+	help
+	  GeenBook is a notebook based on Rockchip RK3588.
+
 config TARGET_JAGUAR_RK3588
 	bool "Theobroma Systems SBC-RK3588-AMR (Jaguar)"
 	select BOARD_LATE_INIT
@@ -376,5 +382,6 @@ source "board/rockchip/evb_rk3588/Kconfig"
 source "board/rockchip/toybrick_rk3588/Kconfig"
 source "board/theobroma-systems/jaguar_rk3588/Kconfig"
 source "board/theobroma-systems/tiger_rk3588/Kconfig"
+source "board/coolpi/genbook/Kconfig"
 
 endif

@@ -1,0 +1,23 @@
+Compile the U-Boot
+==================
+
+  > cd u-boot
+  > export ROCKCHIP_TPL=../rkbin/bin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.17.bin
+  > export BL31=../rkbin/bin/rk35/rk3588_bl31_v1.46.elf
+  > make coolpi-genbook-rk3588_defconfig
+  > make CROSS_COMPILE=aarch64-linux-gnu-
+
+  Get u-boot-rockchip.bin for eMMC and u-boot-rockchip-spi.bin for SPI Nor.
+
+
+Write u-boot to eMMC or SPI Nor if you have a bootable linux system on the computer:
+
+Flash the image to eMMC
+==========================
+  > dd if=u-boot-rockchip.bin of=/dev/mmcblk0 bs=512 seek=64
+
+Flash the image to SPI Nor
+==========================
+ > dd if=u-boot-rockchip-spi.bin of=/dev/mtdblock0
+
+Note: The boot priority of SPI Nor is higher than that of eMMC

@@ -6,6 +6,12 @@ config TARGET_EVB_RK3588
 	help
 	  RK3588 EVB is a evaluation board for Rockchp RK3588.
 
+config TARGET_GENBOOK_RK3588
+	bool "Cool Pi GenBook"
+	select BOARD_LATE_INIT
+	help
+	  GeenBook is a notebook based on Rockchip RK3588.
+
 config TARGET_JAGUAR_RK3588
 	bool "Theobroma Systems SBC-RK3588-AMR (Jaguar)"
 	select BOARD_LATE_INIT
@@ -323,5 +329,6 @@ source "board/rockchip/evb_rk3588/Kconfig"
 source "board/rockchip/toybrick_rk3588/Kconfig"
 source "board/theobroma-systems/jaguar_rk3588/Kconfig"
 source "board/theobroma-systems/tiger_rk3588/Kconfig"
+source "board/coolpi/genbook/Kconfig"
 
 endif
